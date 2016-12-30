@@ -10,6 +10,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("This is the First App from the Beginning C# book");
+            Console.ReadKey(); //Await Key event
         }
     }
 }
