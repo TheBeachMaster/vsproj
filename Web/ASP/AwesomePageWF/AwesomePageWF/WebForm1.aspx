@@ -4,11 +4,30 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Awesome Page</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+
+            <br />
+            <br />
+            Enter Details:<br />
+            Name:<br />
+            <asp:TextBox ID="TBName" runat="server"></asp:TextBox>
+&nbsp;&nbsp;
+            <br />
+            Age:&nbsp;
+            <br />
+            <asp:TextBox ID="TBAge" runat="server"></asp:TextBox>
+            <br />
+            <br />
+&nbsp;<asp:Button ID="BtnShow" runat="server" Text="Button" Width="111px" />
+            <br />
+            <br />
+            <asp:Label ID="DtlLabel" runat="server" ForeColor="Red" Text="Label"></asp:Label>
+            <br />
+
         </div>
     </form>
 </body>
