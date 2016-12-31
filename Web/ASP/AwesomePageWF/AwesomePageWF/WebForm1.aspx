@@ -7,7 +7,7 @@
     <title>Awesome Page</title>
     <style>
         div {
-            background :url("assets/bar.png");
+            background :url("assets/barlink.png");
         }
     </style>
 </head>
