@@ -16,7 +16,7 @@
             Enter Name:<br />
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="Display Name" Width="114px" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Welcome User" Width="114px" OnClick="Button1_Click" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Red"></asp:Label>
