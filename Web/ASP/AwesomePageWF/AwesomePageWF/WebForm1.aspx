@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
 
-            <br />
+            Welcome to Your Awesome Webforms Page<br />
             <br />
             Enter Details:<br />
             Name:<br />
@@ -22,7 +22,7 @@
             <asp:TextBox ID="TBAge" runat="server"></asp:TextBox>
             <br />
             <br />
-&nbsp;<asp:Button ID="BtnShow" runat="server" Text="Button" Width="111px" />
+&nbsp;<asp:Button ID="BtnShow" runat="server" OnClick="BtnShow_Click" Text="Show Details" Width="111px" />
             <br />
             <br />
             <asp:Label ID="DtlLabel" runat="server" ForeColor="Red" Text="Label"></asp:Label>
