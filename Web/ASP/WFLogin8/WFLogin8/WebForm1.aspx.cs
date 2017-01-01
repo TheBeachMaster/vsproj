@@ -20,7 +20,10 @@ namespace WFLogin8
         protected void RegisterUser(object sender, EventArgs e)
         {
             int userId = 0;
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Projects\\VS\\Web\\ASP\\WFLogin8\\WFLogin8\\App_Data\\LoginDB.mdf;Integrated Security=True"].ConnectionString;
+            
+            // string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("Insert_User"))
