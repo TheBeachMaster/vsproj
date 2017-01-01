@@ -19,6 +19,7 @@ namespace WFLogin8
 
         protected void RegisterUser(object sender, EventArgs e)
         {
+           // int userId = 1;
             int userId = 0;
             string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
             
