@@ -8,6 +8,11 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using LoginAuthWF.Models;
 
+using SendGrid;
+using System.Net;
+using System.Configuration;
+using System.Diagnostics;
+
 namespace LoginAuthWF
 {
     public class EmailService : IIdentityMessageService
