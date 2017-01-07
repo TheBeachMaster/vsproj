@@ -8,6 +8,9 @@
 </head>
 <body>
     <h2>Welcome to Awesome Login Page</h2>
+
+    <asp:Login ID="Login1" runat="server"></asp:Login>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     <form id="form1" runat="server">
         <div>
         </div>
