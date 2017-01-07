@@ -13,5 +13,10 @@ namespace UserAuth1
         {
 
         }
+
+        protected void Login1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
