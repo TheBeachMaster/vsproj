@@ -10,7 +10,11 @@
     <h3>This is the Home Page</h3>
     <form id="form1" runat="server">
         <div>
-            <asp:LoginView ID="LoginView1" runat="server"></asp:LoginView>
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                   <h3>You are not Logged in.Please login to continue</h3>&nbsp;
+                </AnonymousTemplate>
+            </asp:LoginView>
         </div>
     </form>
 </body>
