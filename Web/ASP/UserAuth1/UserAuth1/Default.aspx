@@ -10,6 +10,7 @@
     <h3>This is the Home Page</h3>
     <form id="form1" runat="server">
         <div>
+            <asp:LoginView ID="LoginView1" runat="server"></asp:LoginView>
         </div>
     </form>
 </body>
