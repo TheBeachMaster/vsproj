@@ -14,6 +14,11 @@
                 <AnonymousTemplate>
                    <h3>You are not Logged in.Please login to continue</h3>&nbsp;
                 </AnonymousTemplate>
+                <LoggedInTemplate>
+                    You&#39;re logged In.Welcome&nbsp;
+                    <asp:LoginName ID="LoginName1" runat="server" />
+                    &nbsp;
+                </LoggedInTemplate>
             </asp:LoginView>
         </div>
     </form>
