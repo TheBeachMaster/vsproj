@@ -2,9 +2,18 @@
 //
 
 #include "stdafx.h"
+
 #include <iostream>
 
 using namespace std;
+
+bool checkSimilarity(int arraya[], int arrayb[], int a, int b)
+{
+
+	std::sort(arraya, arraya + a);
+	std::sort(arrayb, arrayb + b);
+	return a == b && std::equal(arraya, arraya + a, arrayb);
+}
 
 int main()
 {
@@ -27,8 +36,11 @@ int main()
 
 	int a = (sizeof(arrayA) / sizeof(arrayA[0]));
 	int b = (sizeof(arrayB) / sizeof(arrayB[0]));
-	cout << checkForSimilar(arrayA, arrayB, a, b);
+	cout << checkSimilarity(arrayA, arrayB, a, b);
 	 
+
+
+
     return 0;
 }
 
