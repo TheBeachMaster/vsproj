@@ -4,7 +4,6 @@
 #include "stdafx.h"
 #include <algorithm>
 #include <iostream>
-
 using namespace std;
 
 bool checkSimilarity(int arraya[], int arrayb[], int a, int b)
