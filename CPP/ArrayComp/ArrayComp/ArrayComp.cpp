@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include <algorithm>
 #include <iostream>
 
 using namespace std;
