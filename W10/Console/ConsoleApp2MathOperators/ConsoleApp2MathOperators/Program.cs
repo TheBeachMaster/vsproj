@@ -44,6 +44,7 @@ namespace ConsoleApp2MathOperators
                               $"the division is : {divide} \n" +
                               $"the difference is : {subtract} \n" + 
                               $"the remainder is : {modulo} \n");
+
             Console.WriteLine("Please press any key to continue");
 
             Console.ReadKey();
