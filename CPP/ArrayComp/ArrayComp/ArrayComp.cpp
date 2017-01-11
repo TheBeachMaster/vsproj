@@ -17,7 +17,11 @@ bool checkSimilarity(int arraya[], int arrayb[], int a, int b)
 
 int main()
 {
-
+	int arr[] = { 1, 2, 2 };
+	int arrb[] = { 1, 2, 1 };
+	int a = (sizeof(arr) / sizeof(arr[0]));
+	int b = (sizeof(arrb) / sizeof(arrb[0]));
+	std::cout << checkSimilarity(arr, arrb, a, b);
 }
 
 /*
