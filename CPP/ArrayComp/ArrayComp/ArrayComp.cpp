@@ -23,6 +23,11 @@ int main()
 	{
 		cin >> arrayB[i];
 	}
+
+
+	int a = (sizeof(arrayA) / sizeof(arrayA[0]));
+	int b = (sizeof(arrayB) / sizeof(arrayB[0]));
+	cout << checkForSimilar(arrayA, arrayB, a, b);
 	 
     return 0;
 }
