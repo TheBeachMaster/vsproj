@@ -17,7 +17,6 @@ and also debug. (almost at the end
 
 
 
-#include <DS1307RTC.h>
 #include <LiquidCrystal.h>
 #include <RTClib.h>
 #include <Wire.h>
@@ -93,7 +92,7 @@ void setup()
 
 void loop()
 {
-	{ DateTime; now = rtc.now();
+	{ DateTime now = rtc.now();
 
 	Serial.print(F("Date/Time: "));
 	Serial.println(buf1);
