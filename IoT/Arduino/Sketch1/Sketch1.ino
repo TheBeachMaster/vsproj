@@ -3,20 +3,6 @@
  Created:	1/12/2017 09:22:36
  Author:	Kennedy
 */
-
-/* the project below is basically to design a domestic power autochanger between kplc and solar panel battery.
-*  1.first it checks whether power from kplc is on or off. if power is ON the kplc output relay goes high to supply the load.
-if power is off, the current (selected) battery goes high.
-2. it checks whether it is within a certain range to avoid surges.
-3. once the battery is full and it was perviously empty it switches from kplc relay to current (selected) battery.
-4. once the battery is fully discharged and it was perviously empty it switches from current (selected) battery to kplc output while charging relay pin 6 and 7 goes high respectively .
-5. i am using a time function to calculate units spent in thougth kplc terminal and units saved through solar battery terminal
-2.please help me create a varible that resets back to zero once 30 or 31 days have elaspe. so that i can use it to calculate KWH spent(unit metered by kplc) and KWH saved( units consumed while usin solar battery).
-and also debug. (almost at the end
-)*/
-
-
-
 #include <LiquidCrystal.h>
 #include <RTClib.h>
 #include <Wire.h>
@@ -34,6 +20,7 @@ int solarbattery = A3; // pin A3 is connected to the battery to measure battery 
 int solarbatteryB = 14;
 int SOLARBATTERY = 12;//Relay of the solar batery is connected pin 12
 int batteryStatus;
+
 int solarChargerA = 6; //relay for charging the first battery.
 int solarChargerB = 7; //relay for charging the second battery
 int kplCurrent = A0;//pin A0 is connect to the current sensor 
@@ -46,13 +33,14 @@ boolean LastStatus = LOW;
 boolean LastStatusB = LOW;
 int transformeRatio = 50; //this is the transformer ratio of the step down transformer. 
 int analogVal;
-
+int empty;
+int full;
 int kplcValue;
 int val = 0;  // variable to store the value read
 LiquidCrystal lcd(10, 11, 5, 4, 3, 2);
 char CurrentBattery;
-int OnKplcMinutes;
-int OnSolarMinutes;
+int KplcCurrentSecond;
+int currentSecond;
 float kplcPower;
 float totalCurrentUnitsUsed;
 float totalUnitSaved;
@@ -84,7 +72,7 @@ void setup()
 	lcd.clear();
 	Wire.begin();
 	rtc.begin();
-	rtc.adjust(DateTime(F(_DATE_), F(_TIME_)));
+	rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
 
 
@@ -92,11 +80,11 @@ void setup()
 
 void loop()
 {
-	{ DateTime now = rtc.now();
-
-	Serial.print(F("Date/Time: "));
-	Serial.println(buf1);
-	delay(1000);
+	DateTime now = rtc.now();
+	{
+		Serial.print(F("Date/Time: "));
+		Serial.println(buf1);
+		delay(1000);
 	}
 
 	val = analogRead(kplc);    // read the input pin
@@ -210,14 +198,18 @@ void loop()
 			}
 			// we used button 1 for situation where there is only one battery and button 2 for situation where there is 2 two batteries for longer discharging hours.
 			switch (button1) {
-			case ('100< batteryStatus <=50'):
+			case 1:
+				100< batteryStatus <= 50;
 				CurrentBattery = SOLARBATTERY;
 				digitalWrite(CurrentBattery, HIGH);
 				break;
-			case (' 50< batteryStatus >=25'):
+			case 2:
+				50< batteryStatus >= 25;
 				CurrentBattery = SOLARBATTERY;
 
-				if ('100< batteryStatus <=50' && digitalRead(kplc) == HIGH) {
+				if (kplc = HIGH) {
+					100< batteryStatus <= 50;
+
 					digitalWrite(CurrentBattery, LOW);
 					digitalWrite(KPLC, HIGH);
 				}
@@ -230,7 +222,8 @@ void loop()
 				}
 
 				break;
-			case ('batteryStatus < 24'):
+			case 3:
+				batteryStatus < 24;
 				digitalWrite(KPLC, HIGH);
 				break;
 			default:
@@ -241,11 +234,13 @@ void loop()
 
 
 			switch (button2) { // we used button 1 for situation where there is only one battery and button 2 for situation where there is 2 two batteries for longer discharging hours.
-			case ('100< batteryStatus <=50'):
+			case 1:
+				100< batteryStatus <= 50;
 				CurrentBattery = SOLARBATTERY;
 				digitalWrite(CurrentBattery, HIGH);
 				break;
-			case (' 50< batteryStatus <=25'):
+			case 2:
+				50< batteryStatus <= 25;
 				CurrentBattery = solarbatteryB;
 
 				if (solarCurrent<5) {
@@ -270,39 +265,48 @@ void loop()
 
 		// CHARGING MODE IF THE BATTERIES
 		{
-			BatteryStutusB = analogRead(SOLARBATTERYb);
+			int BatteryStatusB = analogRead(SOLARBATTERYb);
 			const int voltageMin = 9.5;
 			const int voltageMax = 13.0;
-			BatteryStutusB = map(analogVal, empy, full, 25, 100);
+			BatteryStatusB = map(analogVal, empty, full, 25, 100);
 
 
 
 
-			if (LastStatusB = HIGH || LastStatus = LOW && BatteryStutusB == empy || batteryStatus == voltageMin) {
-
-				CurrentBattery = !CurrentBattery;
-				LastStatus = LOW;
-				LastStatusB = LOW;
+			if (LastStatusB = HIGH && BatteryStatusB == 25) {
+				if (LastStatus = LOW && batteryStatus == 20) {
 
 
-				//for the code below use boolean to charge the battery
+					CurrentBattery = !CurrentBattery;
+					LastStatus = LOW;
+					LastStatusB = LOW;
 
 
-				switch (digitalRead(SolarPanel) == HIGH && button2) {
-				case ('90<BatteryStutusB<25'):
-					digitalWrite(solarCharger, HIGH);
-					digitalWrite(solarChargerB, LOW);
-					break;
+					//for the code below use boolean to charge the battery
 
-				case('BatteryStutusB>90 && 90< batteryStatus <24'):
-					digitalWrite(solarChargerA, HIGH);
-					digitalWrite(solarChargeB, LOW);
-					break;
 
-				case('BatteryStutusB>90 && batteryStatus>90 '):
-					digitalWrite(solarChargerA, LOW);
-					digitalWrite(solarChargeB, LOW);
-					break;
+					switch (button2) {
+
+						digitalRead(SolarPanel) == HIGH;
+					case 1:
+						90<BatteryStatusB<25;
+						digitalWrite(solarChargerA, LOW);
+						digitalWrite(solarChargerB, HIGH);
+						break;
+
+					case 2:
+						BatteryStatusB>90 && 90< batteryStatus <24;
+						digitalWrite(solarChargerA, HIGH);
+						digitalWrite(solarChargerB, LOW);
+
+						break;
+
+					case 3:
+						BatteryStatusB>90 && batteryStatus>90;
+						digitalWrite(solarChargerA, LOW);
+
+						break;
+					}
 				}
 
 			}
@@ -310,24 +314,24 @@ void loop()
 			/*please help me create a varible that resets back to zero once 30 or 31 days have elaspe. so that i can use it to calculate KWH spent(unit metered by kplc) and KWH saved( units consumed while usin solar battery).
 			and also debug*/
 
-			while (now.day()>1, now.day() <= 31) {
+			{
 				if (CurrentBattery == HIGH) {
 
-					int current_second = 0;
-					current_second = current_second + now.second();
+					int currentSecond = 0;
+					currentSecond = currentSecond + now.second();
 				}
 
 				if (KPLC == HIGH) {
 
 					int Kplc_current_second = 0;
-					Kplc_current_second = Kplc_current_second + now.second();
+					KplcCurrentSecond = KplcCurrentSecond + now.second();
 				}
 				kplcPower = kplcValue*kplCurrent;
-				kplcEnegyConsumed = kplcPower*Kplc_current_second / 3600000;
+				kplcEnegyConsumed = kplcPower*KplcCurrentSecond / 3600000;
 				totalkplcEnegyConsumed = totalkplcEnegyConsumed + kplcEnegyConsumed;
 
 				solarPower = analogVal*solarCurrent;
-				unitSaved = solarPower*current_second / 3600000;
+				unitSaved = solarPower*currentSecond / 3600000;
 				totalUnitSaved = totalUnitSaved + unitSaved;
 				totalCurrentUnitsUsed = totalUnitSaved + totalkplcEnegyConsumed;
 
@@ -375,9 +379,11 @@ void loop()
 				lcd.print("total units ");
 				lcd.print(totalCurrentUnitsUsed);
 
-				delay(3000);
-			}
+				delay(3000); }
 		}
+	}
+}
+
 
 
 

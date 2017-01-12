@@ -11,7 +11,6 @@
 #ifndef _VSARDUINO_H_
 #define _VSARDUINO_H_
 #define __AVR_ATmega2560__
-#define _VMDEBUG 1
 #define F_CPU 16000000L
 #define ARDUINO 10801
 #define ARDUINO_AVR_MEGA2560
@@ -65,5 +64,5 @@ typedef void *__builtin_va_list;
 #define F(string_literal) ((const PROGMEM char *)(string_literal))
 #undef PSTR
 #define PSTR(string_literal) ((const PROGMEM char *)(string_literal))
-#include "Sketch1.ino"
+#include "DS130RTC.ino"
 #endif
