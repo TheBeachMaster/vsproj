@@ -39,20 +39,20 @@ void loop() {
 	DateTime now = rtc.now();
 
 	//Get the Date  in 3 hours 45 mins and 13 seconds from Now...
-	DateTime future(now + TimeSpan(0, 3, 45, 13));
+	/DateTime future(now + TimeSpan(0, 3, 45, 13));
   
 	Serial.print(" In 3 hours time... ");
-	Serial.print(future.year(), DEC);
+	Serial.print(now.year(), DEC);
 	Serial.print('/');
-	Serial.print(future.month(), DEC);
+	Serial.print(now.month(), DEC);
 	Serial.print('/');
-	Serial.print(future.day(), DEC);
+	Serial.print(now.day(), DEC);
 	Serial.print(' ');
-	Serial.print(future.hour(), DEC);
+	Serial.print(now.hour(), DEC);
 	Serial.print(':');
-	Serial.print(future.minute(), DEC);
+	Serial.print(now.minute(), DEC);
 	Serial.print(':');
-	Serial.print(future.second(), DEC);
+	Serial.print(now.second(), DEC);
 	Serial.println();
 
 	Serial.println();

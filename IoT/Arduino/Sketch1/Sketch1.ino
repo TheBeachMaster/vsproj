@@ -197,7 +197,7 @@ void loop()
 				digitalWrite(CurrentBattery, HIGH);
 			}
 			// we used button 1 for situation where there is only one battery and button 2 for situation where there is 2 two batteries for longer discharging hours.
-			switch (button1) {
+			switch (button1) { //button array
 			case 1:
 				100< batteryStatus <= 50;
 				CurrentBattery = SOLARBATTERY;
@@ -382,8 +382,113 @@ void loop()
 				delay(3000); }
 		}
 	}
+
+
+	
 }
 
 
+/*
+The Simplest Way to check battery Status and display or do something...
 
+1:Suppose I have 3 LEDs: LED1,LED2 and LED3,
+1.1: I can decalre their pinValues
+2: Declare where my Battery is
+2.1: Continously AnalogRead the battery.
+2.2: Attach an interrupt to monitor changes in the Battery Status
+2.2.1: example  (modify this as needed)
+										....
+										other declarations eg batPin for batteryPin
+										....
+										volatile int  batteryStatus = analogRead(batPin);
+
+										void setup(){
+										...
+										other stuff in the setup like pinMode declarations
+										...
+										attachInterrupt(0,bat_ISR,CHANGE);
+
+										...The above code will help us monitor an Interrupt Request Service for any changes in the bat level
+										other codes
+										...
+										}
+										void loop(){
+
+										...some other stuff
+
+										}
+
+										void bat_ISR(){
+										...
+										..code to check battery 
+										...if 50% , do something
+										...if 25% ,another thing
+										...if <25% ,do something else
+										}
+
+				OR...
+
+3.0 Simpler Code but not efficient....
+	analogRead battery value...
+	assign value to another variable
+	map this variable:
+						like so ...
+					 	volatile int batVar = map(batteryStatus,0,12,0,100);
+
+						...we're talking the value of the analog read
+						switch(batVar){
+									case >= 50 :
+									...do something if battery status is greater than 50%
+									break;
+									case >=25 :
+									..do stuff
+									break;
+									case <24 :
+									...do more stuff
+									break;
+						}
+
+4.0 : Reading time and Showing it...
+	: Break this code and see how you will fit it...
+
+	have this in the setup() ...
+	   
+	   Serial.begin(57600);
+	   if (!rtc.begin()) {
+	   Serial.println("Couldn't find RTC");
+	   while (1);
+	   }
+
+	   //If RTC is Running ...Adjust the date to Now
+	   if (!rtc.isrunning()) {
+	   Serial.println("RTC is NOT running!");
+	   // following line sets the RTC to the date & time this sketch was compiled
+	   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+	   //use  rtc.adjust(DateTime(2017, 1, 12, 11, 0, 0)); to set the clock manually
+	   }
+
+	   then...in your loop() ... have this...
+	   DateTime now = rtc.now();
+
+
+	   Serial.print(" In 3 hours time... ");
+	   Serial.print(now.year(), DEC);
+	   Serial.print('/');
+	   Serial.print(now.month(), DEC);
+	   Serial.print('/');
+	   Serial.print(now.day(), DEC);
+	   Serial.print(' ');
+	   Serial.print(now.hour(), DEC);
+	   Serial.print(':');
+	   Serial.print(now.minute(), DEC);
+	   Serial.print(':');
+	   Serial.print(now.second(), DEC);
+	   Serial.println();
+
+	   Serial.println();
+	   delay(3000);
+
+
+              
+*/
 
