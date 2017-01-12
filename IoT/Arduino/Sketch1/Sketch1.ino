@@ -17,6 +17,7 @@ and also debug. (almost at the end
 
 
 
+#include <DS1307RTC.h>
 #include <LiquidCrystal.h>
 #include <RTClib.h>
 #include <Wire.h>
