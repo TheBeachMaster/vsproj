@@ -28,18 +28,24 @@ int main()
 
 	cout << "Enter 5 numbers of the Second Array" << endl;
 	
-	cout << endl;
 
-	cout << "0 means arrays elemnets not equal 1 means array elements equal" << endl;
-	cout << endl;
 
 	for (int i = 0; i < 5; i++)
 	{
 		cin >> arrayB[i];
 	}
+
+	cout << endl;
+
+	cout << "0 means arrays elemnets not equal 1 means array elements are equal" << endl;
+
+	cout << endl;
+
 	int a = (sizeof(arrayA) / sizeof(arrayA[0]));
 	int b = (sizeof(arrayB) / sizeof(arrayB[0]));
 	std::cout << checkSimilarity(arrayA, arrayB, a, b);
+
+
 
 	cout << endl;
 	
