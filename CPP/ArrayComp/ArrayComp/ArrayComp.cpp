@@ -16,6 +16,7 @@ bool checkSimilarity(int arraya[], int arrayb[], int a, int b)
 
 int main()
 {
+	int breakCode = 0;
 	int arrayA[5], arrayB[5], i = 0;
 
 	cout << "Enter 5 numbers of the First Array" << endl;
@@ -34,5 +35,8 @@ int main()
 	int a = (sizeof(arrayA) / sizeof(arrayA[0]));
 	int b = (sizeof(arrayB) / sizeof(arrayB[0]));
 	std::cout << checkSimilarity(arrayA, arrayB, a, b);
+
+	cout << "Enter any number to exit" << endl;
+	cin >> breakCode;
 }
 
