@@ -36,6 +36,8 @@ int main()
 	int b = (sizeof(arrayB) / sizeof(arrayB[0]));
 	std::cout << checkSimilarity(arrayA, arrayB, a, b);
 
+	cout << endl;
+
 	cout << "Enter any number to exit" << endl;
 	cin >> breakCode;
 }
