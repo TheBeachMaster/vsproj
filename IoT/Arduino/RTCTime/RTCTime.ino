@@ -39,7 +39,7 @@ void loop() {
 	DateTime now = rtc.now();
 
 	//Get the Date  in 3 hours 45 mins and 13 seconds from Now...
-	/DateTime future(now + TimeSpan(0, 3, 45, 13));
+	//DateTime future(now + TimeSpan(0, 3, 45, 13));
   
 	Serial.print(" In 3 hours time... ");
 	Serial.print(now.year(), DEC);

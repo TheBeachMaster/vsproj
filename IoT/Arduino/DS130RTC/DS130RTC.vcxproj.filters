@@ -17,5 +17,9 @@
   <ItemGroup>
     <None Include="DS130RTC.ino" />
   </ItemGroup>
- 
+  <ItemGroup>
+    <ClInclude Include="__vm\.DS130RTC.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
