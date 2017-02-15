@@ -11,7 +11,8 @@ namespace UserAuth1.MemberPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           // this.Form.Target = "_blank";
         }
+
     }
 }

@@ -64,7 +64,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MemberPages\CBBtnPage.aspx" />
     <Content Include="MemberPages\CheckBox.aspx" />
+    <Content Include="MemberPages\CrazyPage.aspx" />
     <Content Include="MemberPages\Members.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -78,7 +80,9 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -98,12 +102,26 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MemberPages\CBBtnPage.aspx.cs">
+      <DependentUpon>CBBtnPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPages\CBBtnPage.aspx.designer.cs">
+      <DependentUpon>CBBtnPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MemberPages\CheckBox.aspx.cs">
       <DependentUpon>CheckBox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MemberPages\CheckBox.aspx.designer.cs">
       <DependentUpon>CheckBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPages\CrazyPage.aspx.cs">
+      <DependentUpon>CrazyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPages\CrazyPage.aspx.designer.cs">
+      <DependentUpon>CrazyPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MemberPages\Members.aspx.cs">
       <DependentUpon>Members.aspx</DependentUpon>
