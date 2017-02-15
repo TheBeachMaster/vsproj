@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MemberPages\CheckBox.aspx" />
     <Content Include="MemberPages\Members.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPages\CheckBox.aspx.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPages\CheckBox.aspx.designer.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
     </Compile>
     <Compile Include="MemberPages\Members.aspx.cs">
       <DependentUpon>Members.aspx</DependentUpon>
