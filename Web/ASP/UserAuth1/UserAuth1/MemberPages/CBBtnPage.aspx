@@ -9,9 +9,6 @@
 <body>
     <script language="C#" runat="server">
         
-        bool handle = false;
-      
-        
 
         void CBOn_Click(Object sender, EventArgs e)
         {
@@ -21,18 +18,11 @@
             if (myCbox.Items[0].Selected)
             {
                 Message.Text = Message.Text + myCbox.Items[0].Text + "<br />";
-                handle = true;
+                BtnHandle.Enabled = true;
+                
             }
         }
 
-          protected void OnBtn_Click(object sender, EventArgs e)
-        {
-            if (handle)
-            {
-
-                Response.Redirect("CrazyPage.aspx");
-            }
-        }
         
 
     </script>
@@ -55,7 +45,7 @@
             <br />
         </div>
         
-        <asp:Button ID="Button1" runat="server" Text="Go to Page" Width="109px" OnClick="OnBtn_Click" />
+        <asp:Button ID="BtnHandle" runat="server" Text="Go to Page" Width="109px" OnClick="OnBtn_Click" />
         
        <br /><br />
        <asp:label id="Message" runat="server"/>

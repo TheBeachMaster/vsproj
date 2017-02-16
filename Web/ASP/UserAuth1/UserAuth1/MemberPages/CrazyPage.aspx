@@ -9,6 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Cazy Label for crazy content</div>
+        <div>
+            Yup..You're in the crazy page alright
         </div>
     </form>
 </body>

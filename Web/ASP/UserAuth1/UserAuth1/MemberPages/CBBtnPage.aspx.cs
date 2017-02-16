@@ -11,8 +11,16 @@ namespace UserAuth1.MemberPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // this.Form.Target = "_blank";
+            // this.Form.Target = "_blank";
+            BtnHandle.Enabled = false;
         }
 
+        protected void OnBtn_Click(object sender, EventArgs e)
+        {
+            var url = String.Format(@"CrazyPage.aspx");
+
+            Response.Write("<script> window.open( '" + url + "','_parent' ); </script>");
+            Response.End();
+        }
     }
 }
