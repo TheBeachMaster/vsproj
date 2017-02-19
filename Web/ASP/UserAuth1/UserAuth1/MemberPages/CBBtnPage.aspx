@@ -7,29 +7,56 @@
     <title>Check Box Button Page</title>
 </head>
 <body>
+
+    
+          
+            <!--if (myCbox.Items[0].Selected)
+            //{
+            //    Message.Text = Message.Text + myCbox.Items[0].Text + "<br />";
+            //    BtnHandle.Enabled = true;
+
+            //}
+    -->
+    
     <script language="C#" runat="server">
-        
 
         void CBOn_Click(Object sender, EventArgs e)
         {
-            
-          Message.Text="You have decided to :";
+            Message.Text="You have decided to :";
+            int a = myCbox.Items.Count;
+            int count = 0;
 
-            if (myCbox.Items[0].Selected)
+            for (int i = 0; i < a; i++)
             {
-                Message.Text = Message.Text + myCbox.Items[0].Text + "<br />";
-                BtnHandle.Enabled = true;
-                
+                if (myCbox.Items[i].Selected == true)
+                {
+                    BtnHandle.Enabled = true;
+                    Message.Text = Message.Text + myCbox.Items[0].Text + "<br />";
+                    count++;
+                    
+                }
             }
+            if (count > 1)
+            {
+                for (int i = 0; i < a; i++)
+                {
+                    if (myCbox.Items[i].Selected == true)
+                    {
+                        
+                        myCbox.Items[i].Selected = false;
+                        break;
+                    }
+                }
+            }
+
+
         }
 
-        
 
     </script>
     <form id="form1" runat="server" action="CBBtnPage.aspx" method="post">
         <div>
-            
-       <asp:CheckBoxList id="myCbox" runat="server"
+       <asp:CheckBoxList  id="myCbox" runat="server"
             AutoPostBack="True"
             CellPadding="5"
             CellSpacing="5"
@@ -37,9 +64,14 @@
             RepeatDirection="Vertical"
             RepeatLayout="Flow"
             TextAlign="Right"
-            OnSelectedIndexChanged="CBOn_Click">
+           OnSelectedIndexChanged="CBOn_Click">
 
-          <asp:ListItem>Take Me to Crazy Page</asp:ListItem>
+          <asp:ListItem Value="CrazyPage.aspx" >Take Me to Crazy Page</asp:ListItem>
+           
+          <asp:ListItem Value="Members.aspx">Take Me to Members Page</asp:ListItem>
+           
+          <asp:ListItem Value="AnotherPage.aspx">Take Me to Other Page</asp:ListItem>
+           
 
        </asp:CheckBoxList>
             <br />

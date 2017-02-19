@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MemberPages\AnotherPage.aspx" />
     <Content Include="MemberPages\CBBtnPage.aspx" />
     <Content Include="MemberPages\CheckBox.aspx" />
     <Content Include="MemberPages\CrazyPage.aspx" />
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPages\AnotherPage.aspx.cs">
+      <DependentUpon>AnotherPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPages\AnotherPage.aspx.designer.cs">
+      <DependentUpon>AnotherPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MemberPages\CBBtnPage.aspx.cs">
       <DependentUpon>CBBtnPage.aspx</DependentUpon>
