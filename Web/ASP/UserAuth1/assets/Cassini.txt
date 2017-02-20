@@ -1,0 +1,3 @@
+http://localhost:57815/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=D:\Projects\VS\Web\ASP\UserAuth1\&applicationUrl=/
+
+iisexpress.exe /path:C:\Windows\Microsoft.NET\Framework\v4.0.30319\ASP.NETWebAdminFiles /vpath:”/ASP.NETWebAdminFiles” /port:57815 /clr:4.0 /ntlm

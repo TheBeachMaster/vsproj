@@ -1,0 +1,11 @@
+aspnet_regsql -A all -C "Data Source=.\SQLEXPRESS;Integrated Security=True;User Instance=True" -d "C:\MyProject\APP_DATA\aspnetdb.mdf"
+
+Navigate to %WINDIR%\Microsoft.NET\Framework64\v4.x\
+
+Where %WINDIR% is your local Windows Directory
+
+v4.x is the .NET version 4 
+
+Change Data Source to match your SQL SERVER  Instance name and -d is the directory of your project
+
+Create an MDF file by right-clicking on your Project's App_Data folder and adding an Item,SQL Server Database
