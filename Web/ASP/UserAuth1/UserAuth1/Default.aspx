@@ -16,12 +16,12 @@
                 </AnonymousTemplate>
                 <LoggedInTemplate>
                     You&#39;re logged In.Welcome&nbsp;
-                    <asp:LoginName ID="LoginName1" runat="server" />
+                    <asp:LoginName ID="LoginName1" runat="server"  />
                     &nbsp;
                 </LoggedInTemplate>
             </asp:LoginView>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LoginStatus ID="LoginStatus1" runat="server" />
+            <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage"  LogoutPageUrl="~/Login.aspx" OnLoggingOut="LoginStatus1_LoggingOut" />
         </div>
 
         <div>
