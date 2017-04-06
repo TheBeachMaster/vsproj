@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+            <asp:CheckBoxList ID="CheckBoxList1" runat="server" OnSelectedIndexChanged="ItemSelected">
     <asp:ListItem Value="10"> $ 10 </asp:ListItem>
     <asp:ListItem Value="20"> $ 20 </asp:ListItem>
     <asp:ListItem Value="30"> $ 20 </asp:ListItem>
@@ -18,6 +18,7 @@
     <asp:ListItem Value="60"> $ 60 </asp:ListItem>
             </asp:CheckBoxList>
         </div>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

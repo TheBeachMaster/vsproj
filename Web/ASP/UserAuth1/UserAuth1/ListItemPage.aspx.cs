@@ -13,5 +13,17 @@ namespace UserAuth1
         {
 
         }
+
+        protected void ItemSelected(object sender, EventArgs e)
+        {
+            Int32 totalVal = 0;
+            foreach (ListItem item in CheckBoxList1.Items)
+            {
+                totalVal += Convert.ToInt32(item.Value);
+
+            }
+
+            Label1.Text = totalVal.ToString();
+        }
     }
 }

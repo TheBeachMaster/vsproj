@@ -100,6 +100,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ListItemPage.aspx" />
     <Content Include="MemberPages\AnotherPage.aspx" />
     <Content Include="MemberPages\CBBtnPage.aspx" />
     <Content Include="MemberPages\CheckBox.aspx" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListItemPage.aspx.cs">
+      <DependentUpon>ListItemPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListItemPage.aspx.designer.cs">
+      <DependentUpon>ListItemPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
