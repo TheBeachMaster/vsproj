@@ -14,16 +14,24 @@ namespace UserAuth1
 
         }
 
-        protected void ItemSelected(object sender, EventArgs e)
+
+        protected void ItemSumSub(object sender, EventArgs e)
         {
-            Int32 totalVal = 0;
-            foreach (ListItem item in CheckBoxList1.Items)
+            Int32 totalvalue = 0;
+            //Loop through items in checkboxlist
+            for (int i = 0; i < CheckBoxList1.Items.Count; i++)
             {
-                totalVal += Convert.ToInt32(item.Value);
+                //check if particular items is selected or not
+                if (CheckBoxList1.Items[i].Selected)
+                {
+                    //If selected then add the values to textbox
+                    totalvalue += Convert.ToInt32(CheckBoxList1.Items[i].Value);
 
+                   
+                }
             }
-
-            Label1.Text = totalVal.ToString();
+            Label1.Text += totalvalue.ToString();
+            totalvalue = 0;
         }
     }
 }
