@@ -11,7 +11,14 @@ namespace UserAuth1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //CheckBoxList1.Items[].Attributes.Add("class", "checkbox");
+            for (int i = 0; i < CheckBoxList1.Items.Count; i++)
+            {
+                CheckBoxList1.Items[i].Attributes.Add("class", "checkbox");
+            }
+
+            Button1.Attributes.Add("class", "btn btn-primary btn-lg");
+
         }
 
 

@@ -27,7 +27,7 @@
         </div>
         <div>
 
-            <asp:Button ID="Button1" runat="server" Text="Sum Up and Submit" OnClick="ItemSumSub" CssClass="btn btn-primary" />
+            <asp:Button ID="Button1" runat="server" Text="Sum Up and Submit" OnClick="ItemSumSub" />
         </div>
         <asp:Label ID="Label1" runat="server" Text="Total : "></asp:Label>
     </form>
