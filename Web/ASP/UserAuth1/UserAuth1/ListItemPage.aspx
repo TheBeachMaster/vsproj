@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -14,8 +15,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:CheckBoxList ID="CheckBoxList1" runat="server">
-                <asp:ListItem Value="10"> $ 10 </asp:ListItem>
+            <asp:CheckBoxList  ID="CheckBoxList1" runat="server">
+                
+                <asp:ListItem   Value="10"> $ 10 </asp:ListItem>
                 <asp:ListItem Value="20"> $ 20 </asp:ListItem>
                 <asp:ListItem Value="30"> $ 30 </asp:ListItem>
                 <asp:ListItem Value="40"> $ 40 </asp:ListItem>
@@ -25,7 +27,7 @@
         </div>
         <div>
 
-            <asp:Button ID="Button1" runat="server" Text="Sum Up and Submit" OnClick="ItemSumSub" />
+            <asp:Button ID="Button1" runat="server" Text="Sum Up and Submit" OnClick="ItemSumSub" CssClass="btn btn-primary" />
         </div>
         <asp:Label ID="Label1" runat="server" Text="Total : "></asp:Label>
     </form>

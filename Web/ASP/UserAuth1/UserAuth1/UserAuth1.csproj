@@ -100,6 +100,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Contents\bootstrap-theme.css" />
+    <Content Include="Contents\bootstrap-theme.min.css" />
+    <Content Include="Contents\bootstrap.css" />
+    <Content Include="Contents\bootstrap.min.css" />
     <Content Include="ListItemPage.aspx" />
     <Content Include="MemberPages\AnotherPage.aspx" />
     <Content Include="MemberPages\CBBtnPage.aspx" />
@@ -107,6 +111,10 @@
     <Content Include="MemberPages\CrazyPage.aspx" />
     <Content Include="MemberPages\Members.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Contents\bootstrap-theme.css.map" />
+    <Content Include="Contents\bootstrap-theme.min.css.map" />
+    <Content Include="Contents\bootstrap.css.map" />
+    <Content Include="Contents\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -119,6 +127,9 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
