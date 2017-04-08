@@ -11,6 +11,7 @@
     <link href="Contents/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jQuery.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
