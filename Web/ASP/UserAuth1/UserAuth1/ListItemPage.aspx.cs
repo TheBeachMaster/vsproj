@@ -37,6 +37,8 @@ namespace UserAuth1
                    
                 }
             }
+
+            //totalvalue = Sosa.
             Label1.Text += totalvalue.ToString();
             totalvalue = 0;
         }

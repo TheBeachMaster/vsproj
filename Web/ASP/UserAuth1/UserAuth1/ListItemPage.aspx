@@ -90,7 +90,7 @@
                             <td>1</td>
                             <td>
                                 
-                    <asp:ListItem Value="20">  20 </asp:ListItem>
+                    <asp:ListItem ID="Sosa" Value="20">  20 </asp:ListItem>
                 
                             </td>
                         </tr>
