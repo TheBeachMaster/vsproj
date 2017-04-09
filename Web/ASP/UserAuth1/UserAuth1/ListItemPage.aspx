@@ -84,7 +84,16 @@
                         </tr>
 
 
-
+                        <tr>
+                            <td> <input type="checkbox" value=""></td>
+                            <td>Ugali Sosa</td>
+                            <td>1</td>
+                            <td>
+                                
+                    <asp:ListItem Value="20">  20 </asp:ListItem>
+                
+                            </td>
+                        </tr>
 
                     </tbody>
                 </table>
