@@ -18,10 +18,10 @@ namespace UserAuth1
             }
 
             Button1.Attributes.Add("class", "btn btn-primary btn-lg");
-
+            //SubButton.Attributes.Add("class","btn btn-info btn-lg");
         }
 
-
+       
         protected void ItemSumSub(object sender, EventArgs e)
         {
             Int32 totalvalue = 0;

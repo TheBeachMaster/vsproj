@@ -83,12 +83,15 @@
                             <td>14.79</td>
                         </tr>
 
-</asp:CheckBoxList><br />
+
 
 
                     </tbody>
                 </table>
 
+            </div>
+            <div>
+                <asp:Button ID="Button2" CssClass="btn btn-lg btn-primary" Text="Submit" runat="server" OnClick="ItemSumSub" />
             </div>
         </form>
     </body>
