@@ -17,6 +17,7 @@
 
     <body>
         <form id="form1" runat="server">
+            <!--
             <div>
                 <asp:CheckBoxList ID="CheckBoxList1" runat="server">
 
@@ -35,7 +36,7 @@
                 <asp:Button ID="Button1" runat="server" Text="Sum Up and Submit" OnClick="ItemSumSub" />
             </div>
             <asp:Label ID="Label1" runat="server" Text="Total : "></asp:Label>
-
+-->
 
             <div class="container">
                 <h2>Arthur's Super Awesome Restaurant</h2>
@@ -49,6 +50,8 @@
                         </tr>
                     </thead>
                     <tbody>
+
+
                         <tr>
                              <td><input type="checkbox" value=""></td>
                             <td>Chapo Mix</td>
@@ -79,6 +82,10 @@
                             <td>1</td>
                             <td>14.79</td>
                         </tr>
+
+</asp:CheckBoxList><br />
+
+
                     </tbody>
                 </table>
 
