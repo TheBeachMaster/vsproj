@@ -50,8 +50,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
-
                         <tr>
                              <td><input type="checkbox" value=""></td>
                             <td>Chapo Mix</td>
@@ -82,8 +80,6 @@
                             <td>1</td>
                             <td>14.79</td>
                         </tr>
-
-
                         <tr>
                             <td> <input type="checkbox" value=""></td>
                             <td>Ugali Sosa</td>
@@ -91,10 +87,8 @@
                             <td>
                                 
                     <asp:ListItem ID="Sosa" Value="20">  20 </asp:ListItem>
-                
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
 
