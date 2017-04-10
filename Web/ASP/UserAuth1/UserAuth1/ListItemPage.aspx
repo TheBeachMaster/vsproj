@@ -13,6 +13,8 @@
         <script src="Scripts/bootstrap.js"></script>
         <script src="Scripts/bootstrap.min.js"></script>
         <script src="Scripts/jQuery.js"></script>
+        <script src="Scripts/json2js.js"></script> 
+       <script type="text/javascript" src="http://cdn.jsdelivr.net/json2/0.1/json2.js"></script>
     </head>
 
     <body>
@@ -80,15 +82,7 @@
                             <td>1</td>
                             <td>14.79</td>
                         </tr>
-                        <tr>
-                            <td> <input type="checkbox" value=""></td>
-                            <td>Ugali Sosa</td>
-                            <td>1</td>
-                            <td>
-                                
-                    <asp:ListItem ID="Sosa" Value="20">  20 </asp:ListItem>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
 
