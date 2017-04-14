@@ -22,39 +22,25 @@ namespace UserAuth1
 
         protected void AddItems(object sender, EventArgs e)
         {
-           
             //You can have the User's name added here to DB  for submission
-
             //This Data Goes to a Separate Table
-
             //Proc....
             /* 1.Get Connnection String
              * 2.Open Connection
              * 3.Execute Query
              * 4.Close Connection
             */
-
             using (SqlConnection sqlCon = new SqlConnection())
             {
                 Int32 totalVal = 0;
                 sqlCon.ConnectionString = ConfigurationManager.ConnectionStrings["foodConstr"].ConnectionString;
-
                 using (SqlCommand sqlCmd = new SqlCommand())
                 {
                     sqlCmd.CommandText = "INSERT INTO Submit(TotalVal) VALUES(@TotalVal)";
 
                     sqlCmd.Connection = sqlCon;
                     sqlCon.Open();
-
-                    /*  
-                      foreach (ListItem item in FoodItemsList.Items)
-                      {
-                          sqlCmd.Parameters.Clear();
-                          sqlCmd.Parameters.AddWithValue("@TotalValue", item.Value);
-
-                      }
-                      */
-
+                    
                     for (int i = 0; i < FoodItemsList.Items.Count; i++)
                     {
                         //check if particular items is selected or not
@@ -62,21 +48,15 @@ namespace UserAuth1
                         {
                             //If selected then add the values to textbox
                             totalVal += Convert.ToInt32(FoodItemsList.Items[i].Value);
-
-
                         }
                     }
-
                     sqlCmd.Parameters.Clear();
                     sqlCmd.Parameters.AddWithValue("@TotalVal", totalVal);
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
-
-
                 }
+                Response.Redirect(Request.Url.AbsoluteUri);
             }
-
-
 
         }
 
@@ -101,7 +81,8 @@ namespace UserAuth1
                         while (sqlReader.Read()) //Read All Items
                         {
                             ListItem dataItems = new ListItem();
-                            dataItems.Text = sqlReader["Food Name"].ToString() + "@ Ksh . "+ "    "+ sqlReader["Food Price"].ToString();
+                            
+                            dataItems.Text = sqlReader["Food Name"].ToString() + "  @ Ksh . "+ "    "+ sqlReader["Food Price"].ToString();
                             dataItems.Value = sqlReader["Food Price"].ToString();
                             dataItems.Selected = Convert.ToBoolean(sqlReader["Selected"]);
                             FoodItemsList.Items.Add(dataItems);
@@ -132,7 +113,6 @@ namespace UserAuth1
                 }
             }
             
-            TotalsLabel.Text += totalvalue.ToString();
         }
     }
 }

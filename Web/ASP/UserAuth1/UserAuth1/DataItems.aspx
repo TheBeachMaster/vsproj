@@ -12,15 +12,18 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jQuery.js"></script>
     <script src="Scripts/npm.js"></script>
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
             <h2>Welcome to Arthur's Magical Caffe</h2>
-            <asp:CheckBoxList ID="FoodItemsList" runat="server" OnSelectedIndexChanged="GetTotals">
+            <asp:CheckBoxList  ID="FoodItemsList" runat="server" OnSelectedIndexChanged="GetTotals">
 
             </asp:CheckBoxList>
-
+            
         </div>
         <div class="container">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -28,7 +31,7 @@
 
         </div>
         <div class="container">
-            <asp:Label ID="TotalsLabel" runat="server" Text="Total : "></asp:Label>
+            <asp:Label ID="TotalsLabel" runat="server"  Text="Total : "></asp:Label>
         </div>
     </form>
 </body>
