@@ -22,9 +22,61 @@ namespace UserAuth1
 
         protected void AddItems(object sender, EventArgs e)
         {
+           
             //You can have the User's name added here to DB  for submission
 
             //This Data Goes to a Separate Table
+
+            //Proc....
+            /* 1.Get Connnection String
+             * 2.Open Connection
+             * 3.Execute Query
+             * 4.Close Connection
+            */
+
+            using (SqlConnection sqlCon = new SqlConnection())
+            {
+                Int32 totalVal = 0;
+                sqlCon.ConnectionString = ConfigurationManager.ConnectionStrings["foodConstr"].ConnectionString;
+
+                using (SqlCommand sqlCmd = new SqlCommand())
+                {
+                    sqlCmd.CommandText = "INSERT INTO Submit TotalVal=@TotalValue";
+
+                    sqlCmd.Connection = sqlCon;
+                    sqlCon.Open();
+
+                    /*  
+                      foreach (ListItem item in FoodItemsList.Items)
+                      {
+                          sqlCmd.Parameters.Clear();
+                          sqlCmd.Parameters.AddWithValue("@TotalValue", item.Value);
+
+                      }
+                      */
+
+                    for (int i = 0; i < FoodItemsList.Items.Count; i++)
+                    {
+                        //check if particular items is selected or not
+                        if (FoodItemsList.Items[i].Selected)
+                        {
+                            //If selected then add the values to textbox
+                            totalVal += Convert.ToInt32(FoodItemsList.Items[i].Value);
+
+
+                        }
+                    }
+
+                    sqlCmd.Parameters.Clear();
+                    sqlCmd.Parameters.AddWithValue("@TotalValue", totalVal);
+                    sqlCmd.ExecuteNonQuery();
+                    sqlCon.Close();
+
+
+                }
+            }
+
+
 
         }
 
@@ -60,6 +112,27 @@ namespace UserAuth1
                     //Close all connections
                 }
             }
+        }
+
+        protected void GetTotals(object sender, EventArgs e)
+        {
+            //Remember THIS Function()?
+
+            Int32 totalvalue = 0;
+            //Loop through items in checkboxlist
+            for (int i = 0; i < FoodItemsList.Items.Count; i++)
+            {
+                //check if particular items is selected or not
+                if (FoodItemsList.Items[i].Selected)
+                {
+                    //If selected then add the values to textbox
+                    totalvalue += Convert.ToInt32(FoodItemsList.Items[i].Value);
+
+
+                }
+            }
+            
+            TotalsLabel.Text += totalvalue.ToString();
         }
     }
 }
