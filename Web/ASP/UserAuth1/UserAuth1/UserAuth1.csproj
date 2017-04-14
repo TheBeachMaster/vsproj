@@ -104,6 +104,7 @@
     <Content Include="Contents\bootstrap-theme.min.css" />
     <Content Include="Contents\bootstrap.css" />
     <Content Include="Contents\bootstrap.min.css" />
+    <Content Include="DataItems.aspx" />
     <Content Include="ListItemPage.aspx" />
     <Content Include="MemberPages\AnotherPage.aspx" />
     <Content Include="MemberPages\CBBtnPage.aspx" />
@@ -137,6 +138,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataItems.aspx.cs">
+      <DependentUpon>DataItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataItems.aspx.designer.cs">
+      <DependentUpon>DataItems.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

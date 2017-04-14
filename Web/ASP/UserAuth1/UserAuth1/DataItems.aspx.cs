@@ -41,7 +41,7 @@ namespace UserAuth1
 
                 using (SqlCommand sqlCmd = new SqlCommand())
                 {
-                    sqlCmd.CommandText = "INSERT INTO Submit TotalVal=@TotalValue";
+                    sqlCmd.CommandText = "INSERT INTO Submit(TotalVal) VALUES(@TotalVal)";
 
                     sqlCmd.Connection = sqlCon;
                     sqlCon.Open();
@@ -68,7 +68,7 @@ namespace UserAuth1
                     }
 
                     sqlCmd.Parameters.Clear();
-                    sqlCmd.Parameters.AddWithValue("@TotalValue", totalVal);
+                    sqlCmd.Parameters.AddWithValue("@TotalVal", totalVal);
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
 
@@ -101,7 +101,7 @@ namespace UserAuth1
                         while (sqlReader.Read()) //Read All Items
                         {
                             ListItem dataItems = new ListItem();
-                            dataItems.Text = sqlReader["Food Name"].ToString();
+                            dataItems.Text = sqlReader["Food Name"].ToString() + "@ Ksh . "+ "    "+ sqlReader["Food Price"].ToString();
                             dataItems.Value = sqlReader["Food Price"].ToString();
                             dataItems.Selected = Convert.ToBoolean(sqlReader["Selected"]);
                             FoodItemsList.Items.Add(dataItems);

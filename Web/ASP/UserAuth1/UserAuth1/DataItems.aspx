@@ -24,7 +24,7 @@
         </div>
         <div class="container">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="BtnSubmit" runat="server" Height="34px" Text="Submit Order" Width="152px" CssClass="btn btn-lg btn-primary" OnClick="AddItems" />
+        <asp:Button ID="BtnSubmit" runat="server" Height="48px" Text="Submit Order" Width="152px" CssClass="btn btn-lg btn-primary" OnClick="AddItems" />
 
         </div>
         <div class="container">
