@@ -133,6 +133,7 @@
     <Content Include="Scripts\jQuery.js" />
     <Content Include="Scripts\json2js.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Transact.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -213,6 +214,13 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Transact.aspx.cs">
+      <DependentUpon>Transact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transact.aspx.designer.cs">
+      <DependentUpon>Transact.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
