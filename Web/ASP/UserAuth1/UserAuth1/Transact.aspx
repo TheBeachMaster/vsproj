@@ -28,9 +28,12 @@
                     <asp:ListItem Value="50"> Ugali Skuma </asp:ListItem>
                     <asp:ListItem Value="60"> Rice Nyama </asp:ListItem>
             </asp:CheckBoxList>
+            <p>
+                <asp:Label ID="Label2" runat="server"></asp:Label>
+            </p>
         </div>
         <div class="container btn-group">
-            <asp:Button Text="Check Total" runat="server" CssClass="btn btn-lg btn-info" />
+            <asp:Button Text="Check Total" runat="server" CssClass="btn btn-lg btn-info" OnClick="GetTotals" />
             <asp:Button Text="Pay Items" runat="server" CssClass="btn btn-lg btn-primary" OnClick="LaunchPayModal" />
         </div>
 

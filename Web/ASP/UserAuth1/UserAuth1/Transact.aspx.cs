@@ -20,5 +20,26 @@ namespace UserAuth1
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "transactModal", "$('#transactModal').modal();", true);
             upModal.Update();
         }
+
+        protected void GetTotals(object sender, EventArgs e)
+        {
+            Int32 totalvalue = 0;
+            Label2.Text = " ";
+            //Loop through items in checkboxlist
+            for (int i = 0; i < ItemsList.Items.Count; i++)
+            {
+                //check if particular items is selected or not
+                if (ItemsList.Items[i].Selected)
+                {
+                    //If selected then add the values to textbox
+                    totalvalue += Convert.ToInt32(ItemsList.Items[i].Value);
+
+
+                }
+            }
+
+            Label2.Text += $"Your total is Ksh:  {totalvalue.ToString()}";
+           
+        }
     }
 }
