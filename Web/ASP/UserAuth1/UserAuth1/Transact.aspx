@@ -50,11 +50,12 @@
                     <div class="modal-body">
                         
                         <p>
-                            Pay via M-PESA
+                            Pay via M-PESA by Enterering M-PESA Transaction ID below
                             </p>
                         <div class="container">
-                            <input type="text" name="transact" value="" placeholder="Enter MPESA Code" size="15" />
-                            <asp:Button ID="PayBtn" runat="server" Text="Sumbit Code" CssClass="btn btn-lg btn-primary" />
+                            <asp:TextBox ID="txtTransact" runat="server" ></asp:TextBox>
+                            
+                            <asp:Button ID="PayBtn" runat="server" Text="Sumbit Code" CssClass="btn btn-lg btn-primary" OnClick="PayMpesa" />
                         </div>
                         <asp:Label ID="Label1" runat="server" ></asp:Label>
                     </div>

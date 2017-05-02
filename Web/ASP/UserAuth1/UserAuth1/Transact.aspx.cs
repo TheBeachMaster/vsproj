@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -40,6 +42,35 @@ namespace UserAuth1
 
             Label2.Text += $"Your total is Ksh:  {totalvalue.ToString()}";
            
+        }
+
+        protected void PayMpesa(object sender, EventArgs e)
+        {
+            Label1.Text = " ";
+            using (SqlConnection sqlCon = new SqlConnection())
+            {
+                sqlCon.ConnectionString = ConfigurationManager.ConnectionStrings["mpesaCon"].ConnectionString;
+
+                using (SqlCommand sqlCmd = new SqlCommand())
+                {
+                    sqlCmd.CommandText = "SELECT COUNT(*) FROM [Transact] WHERE ([TransactionID] = @transactId)";
+                    sqlCmd.Connection = sqlCon;
+                    sqlCon.Open();
+
+                    sqlCmd.Parameters.AddWithValue("@transactId", txtTransact.Text);
+                    int transact = (int)sqlCmd.ExecuteScalar();
+
+                    if (transact > 0)
+                    {
+                        Label1.Text += $"Payment Verified";
+                    }
+                    else
+                    {
+                        Label1.CssClass = "danger";
+                        Label1.Text += "Payment not Verified";
+                    }
+                }
+            }
         }
     }
 }
