@@ -16,8 +16,7 @@ namespace UserAuth1
 
         protected void LaunchPayModal(object sender, EventArgs e)
         {
-            lblModalTitle.Text = "Validation Errors List for HP7 Citation";
-            lblModalBody.Text = "This is modal body";
+            lblModalTitle.Text = "Arthur's Caffe Cashier";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "transactModal", "$('#transactModal').modal();", true);
             upModal.Update();
         }
