@@ -8,10 +8,8 @@
     
     <link href="Contents/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Contents/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jQuery.js"></script>
-    <script src="Scripts/npm.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
 
 
 
