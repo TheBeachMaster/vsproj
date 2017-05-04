@@ -7,14 +7,14 @@
     <title>Goods Page</title>
     <link href="Contents/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Contents/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jQuery.js"></script>
-    <script src="Scripts/npm.js"></script>
+
 </head>
 <body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+     <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+        <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>--%>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
