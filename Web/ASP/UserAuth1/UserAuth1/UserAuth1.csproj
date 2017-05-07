@@ -111,6 +111,7 @@
     <Content Include="MemberPages\CheckBox.aspx" />
     <Content Include="MemberPages\CrazyPage.aspx" />
     <Content Include="MemberPages\Members.aspx" />
+    <Content Include="Menus.aspx" />
     <Content Include="packages.config" />
     <Content Include="Contents\bootstrap-theme.css.map" />
     <Content Include="Contents\bootstrap-theme.min.css.map" />
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="MemberPages\Members.aspx.designer.cs">
       <DependentUpon>Members.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menus.aspx.cs">
+      <DependentUpon>Menus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menus.aspx.designer.cs">
+      <DependentUpon>Menus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
