@@ -104,6 +104,7 @@
     <Content Include="Contents\bootstrap-theme.min.css" />
     <Content Include="Contents\bootstrap.css" />
     <Content Include="Contents\bootstrap.min.css" />
+    <Content Include="Contents\Style.css" />
     <Content Include="DataItems.aspx" />
     <Content Include="ListItemPage.aspx" />
     <Content Include="MemberPages\AnotherPage.aspx" />

@@ -7,14 +7,19 @@
     <title>Goods Page</title>
     <link href="Contents/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Contents/bootstrap.min.css" rel="stylesheet" />
+    
+     <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
 
 </head>
 <body>
-     <script src="Scripts/jquery.min.js" type="text/javascript"></script>
-    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+    
+    <form id="form1" runat="server">
        
         <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+        
+   
         <div class="container">
             <asp:CheckBoxList ID="ItemsList" runat="server">
                 
@@ -64,8 +69,6 @@
         </asp:UpdatePanel>
     </div>
 </div>
-    </form>
-
-
+         </form>
 </body>
 </html>
