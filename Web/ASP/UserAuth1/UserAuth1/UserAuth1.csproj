@@ -128,12 +128,8 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.min.js" />
-    <Content Include="Scripts\json2js.js" />
-    <Content Include="Scripts\npm.js" />
     <Content Include="Transact.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
