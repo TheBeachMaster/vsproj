@@ -9,18 +9,56 @@
 
     <link href="Contents/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Contents/bootstrap.min.css" rel="stylesheet" />
-    
-    <%--<script src="Scripts/jquery.min.js" type="text/javascript"></script>
-    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>--%>
 
 </head>
 <body>
-   
-    <form id="form1" runat="server">
-         <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+
+    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
-    <asp:ScriptManager ID="ScriptManager2" runat="server">
-    </asp:ScriptManager>
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager2" runat="server">
+        </asp:ScriptManager>
+
+        <div class="container-fluid" id="restaurantlist">
+
+            <h3>Select a Restaurant from the list below</h3>
+
+            <div class="container">
+
+                <asp:CheckBoxList ID="RestaurantList" runat="server">
+                </asp:CheckBoxList>
+            </div>
+
+            <div class="center">
+                <asp:Button ID="RestSelBtn" runat="server" Text="Submit" CssClass="btn btn-lg btn-primary" />
+            </div>
+
+        </div>
+
+        <div class="container-fluid center" id="menulist" >
+            <asp:Label ID="RestLabel" runat="server"></asp:Label>
+            <br />
+
+            <div id="breakfast">
+
+                <h3>Breakfast</h3>
+                <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
+
+                <hr />
+            </div>
+            <div id="lunch">
+                <h3>Lunch</h3>
+                <asp:CheckBoxList ID="LunchList" runat="server"></asp:CheckBoxList>
+                <hr />
+            </div>
+            <div id="supper">
+                <h3>Supper
+                </h3>
+                <asp:CheckBoxList ID="SupperlIst" runat="server"></asp:CheckBoxList>
+                <hr />
+            </div>
+        </div>
 
     </form>
 </body>
