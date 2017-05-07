@@ -19,8 +19,9 @@ namespace UserAuth1
             }
         }
 
+ 
         /// <summary>
-        /// Gets a list of restarants from the DB and populates them
+        /// Gets a list of restaurants from the DB and populates them
         /// main page.
         /// This function is loaded first when the page loads
         /// </summary>
@@ -32,7 +33,7 @@ namespace UserAuth1
 
                 using (SqlCommand sqlCmd = new SqlCommand())
                 {
-                    sqlCmd.CommandText = "SELECT * FROM Restaurants";
+                    sqlCmd.CommandText = "SELECT * FROM Restaurants ";
                     sqlCmd.Connection = sqlConn;
 
                     //Open Connection to SQL Server Instance
@@ -44,19 +45,74 @@ namespace UserAuth1
                     {
                         while (sqlReader.Read()) //Read All Items
                         {
-                            ListItem restarants = new ListItem();
+                            ListItem restaurants = new ListItem();
 
-                            restarants.Text = sqlReader["Restaurant Name"].ToString();
-                            restarants.Value = sqlReader["Restaurant Name"].ToString();
-                            restarants.Selected = false;
-                            RestaurantList.Items.Add(restarants);
+                            restaurants.Text = sqlReader["Restaurant Name"].ToString();
+                            restaurants.Value = sqlReader["Restaurant Name"].ToString();
+                            restaurants.Selected = false;
+                            RestaurantList.Items.Add(restaurants);
+
+                           
                         }
+                        
                     }
 
                     sqlConn.Close();
                     //Close all connections
                 }
             }
+        }
+
+        protected void SubmitRest(object sender, EventArgs e)
+        {
+
+            string rest = RestaurantList.SelectedItem.Value.ToString();
+            if (rest.Length == 0)
+            {
+                //TODO :Fix Empty Bug
+                RestLabel.Text = "You need to select at least a resaturant";
+            }
+            else
+            {
+                
+                RestLabel.Text = rest;
+            }
+
+            //using (SqlConnection sqlConn = new SqlConnection())
+            //{
+            //    sqlConn.ConnectionString = ConfigurationManager.ConnectionStrings["transact"].ConnectionString;
+
+            //    using (SqlCommand sqlCmd = new SqlCommand())
+            //    {
+            //        sqlCmd.CommandText = "SELECT * FROM [MainTable] WHERE ([Menu] =Breakfast AND [Restaurant Name]=@rest) ";
+            //        sqlCmd.Connection = sqlConn;
+
+            //        //Open Connection to SQL Server Instance
+
+            //        sqlConn.Open();
+
+            //        //Read Data and Nuke 
+            //        using (SqlDataReader sqlReader = sqlCmd.ExecuteReader())
+            //        {
+            //            while (sqlReader.Read()) //Read All Items
+            //            {
+            //                ListItem restaurants = new ListItem();
+
+            //                restaurants.Text = sqlReader["Food Item"].ToString();
+            //                restaurants.Value = sqlReader["Price"].ToString();
+            //                restaurants.Selected = false;
+            //                BreakfastList.Items.Add(restaurants);
+
+
+            //            }
+
+            //        }
+
+            //        sqlConn.Close();
+            //        //Close all connections
+            //    }
+            //}
+
         }
     }
 }

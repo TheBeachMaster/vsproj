@@ -13,8 +13,8 @@
 </head>
 <body>
 
-    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
-    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.min.js" type="text/javascript" ></script>
+    <script src="Scripts/bootstrap.min.js" type="text/javascript" ></script>
 
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager2" runat="server">
@@ -26,12 +26,12 @@
 
             <div class="container">
 
-                <asp:CheckBoxList ID="RestaurantList" runat="server">
+                <asp:CheckBoxList ID="RestaurantList" runat="server" >
                 </asp:CheckBoxList>
             </div>
 
             <div class="center">
-                <asp:Button ID="RestSelBtn" runat="server" Text="Submit" CssClass="btn btn-lg btn-primary" />
+                <asp:Button ID="RestSelBtn" runat="server" Text="Submit" CssClass="btn btn-lg btn-primary" OnClick="SubmitRest" />
             </div>
 
         </div>
@@ -43,7 +43,7 @@
             <div id="breakfast">
 
                 <h3>Breakfast</h3>
-                <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
+                <asp:CheckBoxList ID="BreakfastList" runat="server"></asp:CheckBoxList>
 
                 <hr />
             </div>
