@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 using MQTTnet;
 using MQTTnet.Client;
@@ -42,6 +43,14 @@ namespace MQTT_net
                 await mqttClient.SubscribeAsync(new TopicFilterBuilder().WithTopic("akka/dotnet/get").Build());
                 Console.WriteLine("Subscribed");
             };
+
+            mqttClient.ApplicationMessageReceived += (s, e) =>
+            {
+                Console.WriteLine("Got Stuff");
+                Console.WriteLine($"+ Payload = {Encoding.UTF8.GetString(e.ApplicationMessage.Payload)}");
+            };
+
+            Console.ReadLine(); 
         }
     }
 }
