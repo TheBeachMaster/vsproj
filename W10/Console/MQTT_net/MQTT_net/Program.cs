@@ -7,7 +7,7 @@ namespace MQTT_net
 {
     class Program
     {
-        static async System.Threading.Tasks.Task MainAsync(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             var clientFactory = new MqttFactory();
