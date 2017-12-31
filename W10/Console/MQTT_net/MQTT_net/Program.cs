@@ -6,7 +6,7 @@ namespace MQTT_net
 {
     class Program
     {
-        static void Main(string[] args)
+        static async System.Threading.Tasks.Task MainAsync(string[] args)
         {
             Console.WriteLine("Hello World!");
             var clientFatory = new MqttFactory();
@@ -18,6 +18,8 @@ namespace MQTT_net
                 .WithCredentials("akka", "devicemanager")
                 .WithCleanSession()
                 .Build();
+                    await mqttClient.ConnectAsync(opts);
+                
         }
     }
 }
