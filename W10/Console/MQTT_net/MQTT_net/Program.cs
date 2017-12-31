@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MQTTnet;
 using MQTTnet.Client;
 
@@ -9,8 +10,8 @@ namespace MQTT_net
         static async System.Threading.Tasks.Task MainAsync(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var clientFatory = new MqttFactory();
-            var mqttClient = clientFatory.CreateMqttClient();
+            var clientFactory = new MqttFactory();
+            var mqttClient = clientFactory.CreateMqttClient();
 
             var opts = new MqttClientOptionsBuilder()
                 .WithClientId("DotNet")
@@ -19,7 +20,6 @@ namespace MQTT_net
                 .WithCleanSession()
                 .Build();
                     await mqttClient.ConnectAsync(opts);
-                
             mqttClient.Disconnected += async (s, e) =>
             {
                 Console.WriteLine("Woops We're disconnected");
@@ -36,6 +36,12 @@ namespace MQTT_net
                 }
             };
 
+            mqttClient.Connected += async (s, e) =>
+            {
+                Console.WriteLine("We're connected");
+                await mqttClient.SubscribeAsync(new TopicFilterBuilder().WithTopic("akka/dotnet/get").Build());
+                Console.WriteLine("Subscribed");
+            };
         }
     }
 }
