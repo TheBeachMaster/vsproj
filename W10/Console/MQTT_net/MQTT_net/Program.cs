@@ -1,4 +1,6 @@
 ﻿using System;
+using MQTTnet;
+using MQTTnet.Client;
 
 namespace MQTT_net
 {
@@ -7,6 +9,8 @@ namespace MQTT_net
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var clientFatory = new MqttFactory();
+            var mqttClient = clientFatory.CreateMqttClient();
         }
     }
 }
