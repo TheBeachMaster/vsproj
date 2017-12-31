@@ -20,6 +20,22 @@ namespace MQTT_net
                 .Build();
                     await mqttClient.ConnectAsync(opts);
                 
+            mqttClient.Disconnected += async (s, e) =>
+            {
+                Console.WriteLine("Woops We're disconnected");
+                await Task.Delay(TimeSpan.FromSeconds(5));
+
+                try
+                {
+                    await mqttClient.ConnectAsync(opts);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine("Could not conect: " + exception);
+
+                }
+            };
+
         }
     }
 }
